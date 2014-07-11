@@ -81,6 +81,7 @@ public class Spray extends JFrame implements Runnable{
 		for (int n=0;n<_sprites.size();n++) {
 			DrawnParticle spr = (DrawnParticle)_sprites.get(n);
 			spr.update();
+			spr.bounce();
 		}
 	}
 	
@@ -97,7 +98,7 @@ public class Spray extends JFrame implements Runnable{
 			if (sprayDelayCount >= sprayDelay) {
 				DrawnParticle p = new DrawnParticle(screenWidth/2, screenHeight, this, g2d);
 				
-				double initialXSpeed = rand.nextDouble();
+				double initialXSpeed = rand.nextDouble() *0.4;
 				double initialYSpeed = rand.nextDouble();
 				
 				int sign = rand.nextInt();
